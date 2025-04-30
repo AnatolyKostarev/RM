@@ -4,14 +4,11 @@ import { Header } from '../Header/Header'
 import { Footer } from '../Footer/Footer'
 
 export function Layout({ children }) {
-    return (
-        <div className={s.layout}>
-            <Header />
-            <main className={s.main}>
-                {children}
-            </main>
-            <Footer />
-        </div>
-
-    )
+  return (
+    <div className={s.layout}>
+      <Header />
+      <main className={s.main}>{children}</main>
+      <Footer />
+    </div>
+  )
 }

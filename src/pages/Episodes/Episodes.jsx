@@ -6,13 +6,18 @@ import pageIcon from '../../assets/episodes/episodes-icon.svg'
 import s from './Episodes.module.css'
 
 export const Episodes = () => {
-    return (
-        <Layout>
-            <section className={s.wrapper}>
-                <Container>
-                    <PageLogo src={pageIcon} width={270} height={210} alt="logo" />
-                </Container>
-            </section>
-        </Layout>
-    )
+  return (
+    <Layout>
+      <section className={s.wrapper}>
+        <Container>
+          <PageLogo
+            src={pageIcon}
+            width={270}
+            height={210}
+            alt="logo"
+          />
+        </Container>
+      </section>
+    </Layout>
+  )
 }

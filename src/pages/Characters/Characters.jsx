@@ -8,19 +8,24 @@ import pageIcon from '../../assets/characters/characters-icon.svg'
 import s from './Characters.module.css'
 
 export const Characters = () => {
-    const dispatch = useDispatch()
-    const { value } = useSelector(state => state.counter)
+  const dispatch = useDispatch()
+  const { value } = useSelector(state => state.counter)
 
-    return (
-        <Layout>
-            <section className={s.wrapper}>
-                <Container>
-                    <PageLogo src={pageIcon} width={600} height={200} alt="logo" />
-                    <button onClick={() => dispatch(decrement())}>-</button>
-                    <span>{value}</span>
-                    <button onClick={() => dispatch(increment())}>+</button>
-                </Container>
-            </section>
-        </Layout>
-    )
+  return (
+    <Layout>
+      <section className={s.wrapper}>
+        <Container>
+          <PageLogo
+            src={pageIcon}
+            width={600}
+            height={200}
+            alt="logo"
+          />
+          <button onClick={() => dispatch(decrement())}>-</button>
+          <span>{value}</span>
+          <button onClick={() => dispatch(increment())}>+</button>
+        </Container>
+      </section>
+    </Layout>
+  )
 }

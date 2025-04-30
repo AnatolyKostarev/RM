@@ -6,13 +6,18 @@ import pageIcon from '../../assets/locations/locations-icon.svg'
 import s from './Locations.module.css'
 
 export const Locations = () => {
-    return (
-        <Layout>
-            <Container>
-                <section className={s.wrapper}>
-                    <PageLogo src={pageIcon} width={326} height={202} alt="logo" />
-                </section>
-            </Container>
-        </Layout>
-    )
+  return (
+    <Layout>
+      <Container>
+        <section className={s.wrapper}>
+          <PageLogo
+            src={pageIcon}
+            width={326}
+            height={202}
+            alt="logo"
+          />
+        </section>
+      </Container>
+    </Layout>
+  )
 }
