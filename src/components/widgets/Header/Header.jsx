@@ -1,9 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Container } from '../../ui/Container/Container'
 import { NavBar } from '../../ui/NavBar/NavBar'
 import appLogo from '../../../assets/header/logo-black.svg'
 import s from './Header.module.css'
-import { Link } from 'react-router-dom'
 
 export function Header() {
   return (
@@ -16,6 +16,7 @@ export function Header() {
               src={appLogo}
               width={46}
               height={49}
+              alt="logo"
             />
           </div>
         </Link>
