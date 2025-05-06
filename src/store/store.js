@@ -1,8 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { reducer } from './rootReducer'
+import { reducer } from './rootReducer.js'
+import { middleware } from './middleware.js'
 
 export const setupStore = () => {
-  return configureStore({
-    reducer
-  })
+  return configureStore({ reducer, middleware })
 }

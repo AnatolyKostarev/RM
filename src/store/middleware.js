@@ -1,0 +1,4 @@
+import { characterApi } from '../features/characters/characters-api'
+
+export const middleware = getDefaultMiddleware =>
+  getDefaultMiddleware().concat(characterApi.middleware)
