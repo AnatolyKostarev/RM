@@ -1,0 +1,52 @@
+.title {
+  margin-bottom: 36px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: rgba(142, 142, 147, 1);
+}
+
+.characterEpisodes_items {
+  padding-left: 16px;
+  width: 413px;
+  max-height: 352px;
+  overflow-y: scroll;
+}
+
+.characterEpisodes_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px 16px 0;
+  border-bottom: 1px solid rgba(110, 121, 140, 0.5);
+}
+
+.episode {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: rgba(8, 31, 50, 1);
+}
+
+.name {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: rgba(110, 121, 140, 1);
+}
+
+.date {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(142, 142, 147, 1);
+}

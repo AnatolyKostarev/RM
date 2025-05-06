@@ -1,4 +1,4 @@
-import { characterApi } from '../features/characters/characters-api'
+import { rickAndMortyApi } from '../features/characters/characters-api'
 
 export const middleware = getDefaultMiddleware =>
-  getDefaultMiddleware().concat(characterApi.middleware)
+  getDefaultMiddleware().concat(rickAndMortyApi.middleware)

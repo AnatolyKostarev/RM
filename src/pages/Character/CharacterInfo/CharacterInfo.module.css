@@ -1,0 +1,38 @@
+.title {
+  margin-bottom: 36px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: rgba(142, 142, 147, 1);
+}
+
+.characterInfo_items {
+  padding-left: 16px;
+  width: 413px;
+}
+
+.characterInfo_item {
+  padding: 9px 0 12px;
+  border-bottom: 1px solid rgba(110, 121, 140, 0.5);
+}
+
+.subtitle {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  text-transform: capitalize;
+  color: rgba(8, 31, 50, 1);
+}
+
+.desc {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: rgba(110, 121, 140, 1);
+}

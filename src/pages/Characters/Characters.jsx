@@ -43,7 +43,7 @@ export const Characters = () => {
       <Layout>
         <section className={s.wrapper}>
           <Container>
-            <div className={s.loading}>Loading initial data...</div>
+            <div className={s.loading}>Загружаю...</div>
           </Container>
         </section>
       </Layout>
@@ -55,7 +55,9 @@ export const Characters = () => {
       <Layout>
         <section className={s.wrapper}>
           <Container>
-            <div className={s.error}>Error: {error.message}</div>
+            <div className={s.error}>
+              По Вашему запросу ничего не найдено :(
+            </div>
           </Container>
         </section>
       </Layout>

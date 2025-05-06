@@ -27,7 +27,7 @@ export const Filters = ({ filters, onFilterChange, className }) => {
   return (
     <div className={`${s.filtersContainer} ${className}`}>
       <input
-        type="text"
+        type="search"
         value={nameInput}
         onChange={e => setNameInput(e.target.value)}
         placeholder="Filter by name..."
