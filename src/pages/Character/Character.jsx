@@ -1,18 +1,20 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import {
   useGetCharacterByIdQuery,
   useGetMultipleEpisodesQuery
 } from '../../features/characters/characters-api'
 import { Layout } from '../../components/widgets/Layout/Layout'
 import { Container } from '../../components/ui/Container/Container'
-import s from './Character.module.css'
 import { CharacterAvatar } from './CharacterAvatar/CharacterAvatar'
 import { CharacterInfo } from './CharacterInfo/CharacterInfo'
 import { CharacterEpisodes } from './CharacterEpisodes/CharacterEpisodes'
+import arrowBackIcon from '../../assets/characters/arrow_back.svg'
+import s from './Character.module.css'
 
 export const Character = () => {
   const { id } = useParams()
+  const navigate = useNavigate()
 
   const {
     data: character,
@@ -34,10 +36,6 @@ export const Character = () => {
   } = useGetMultipleEpisodesQuery(episodesIds, {
     skip: episodesIds.length === 0
   })
-
-  console.log(character)
-  console.log('episodesIds', episodesIds)
-  console.log('episodes', episodes)
 
   if (isLoading || episodesLoading) {
     return (
@@ -65,10 +63,24 @@ export const Character = () => {
     )
   }
 
+  const handleGoBack = () => {
+    navigate(-1)
+  }
+
   return (
     <Layout>
       <section className={s.wrapper}>
         <Container>
+          <button
+            className={s.back_btn}
+            type="button"
+            onClick={handleGoBack}>
+            <img
+              src={arrowBackIcon}
+              alt="back"
+            />
+            <span>Go Back</span>
+          </button>
           <CharacterAvatar
             image={character?.image}
             name={character?.name}
