@@ -19,6 +19,8 @@ export const Characters = () => {
     gender: ''
   })
 
+  const [allCharacters, setAllCharacters] = React.useState([])
+
   const { data, isLoading, isFetching, error } = useGetCharactersQuery(
     filters,
     {
@@ -26,11 +28,23 @@ export const Characters = () => {
     }
   )
 
+  React.useEffect(() => {
+    if (data?.characters) {
+      if (filters.page === 1) {
+        // Если это первая страница, заменяем весь список
+        setAllCharacters(data.characters)
+      } else {
+        // Если это последующие страницы, добавляем к существующим
+        setAllCharacters(prev => [...prev, ...data.characters])
+      }
+    }
+  }, [data?.characters, filters.page])
+
   const handleFilterChange = React.useCallback((filterName, value) => {
     setFilters(prev => ({
       ...prev,
       [filterName]: value,
-      page: 1
+      page: 1 // Сбрасываем страницу при изменении фильтров
     }))
   }, [])
 
@@ -81,7 +95,7 @@ export const Characters = () => {
             className={s.filters}
           />
           <CardsContainer>
-            {data?.characters?.map(char => (
+            {allCharacters?.map(char => (
               <CharacterCard
                 key={char.id}
                 {...char}
