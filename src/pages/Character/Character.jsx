@@ -21,13 +21,19 @@ export const Character = () => {
     isLoading,
     error
   } = useGetCharacterByIdQuery(id, {
+    skip: !id,
+    refetchOnMountOrArgChange: true,
     keepPreviousData: true
   })
 
   const episodesIds = React.useMemo(() => {
-    if (!character?.episode) return []
-    return character?.episode?.map(epUrl => +epUrl.split('/').pop())
-  }, [character])
+    return (
+      character?.episode?.map(epUrl => {
+        const parts = epUrl.split('/')
+        return parseInt(parts[parts.length - 1])
+      }) || []
+    )
+  }, [character?.episode])
 
   const {
     data: episodes,
@@ -36,6 +42,10 @@ export const Character = () => {
   } = useGetMultipleEpisodesQuery(episodesIds, {
     skip: episodesIds.length === 0
   })
+
+  const handleGoBack = React.useCallback(() => {
+    navigate(-1)
+  }, [navigate])
 
   if (isLoading || episodesLoading) {
     return (
@@ -61,10 +71,6 @@ export const Character = () => {
         </section>
       </Layout>
     )
-  }
-
-  const handleGoBack = () => {
-    navigate(-1)
   }
 
   return (
@@ -94,7 +100,9 @@ export const Character = () => {
               type={character?.type || 'unkown'}
               location={character?.location?.name}
             />
-            <CharacterEpisodes episodes={episodes} />
+            <CharacterEpisodes
+              episodes={Array.isArray(episodes) ? episodes : [episodes]}
+            />
           </div>
         </Container>
       </section>

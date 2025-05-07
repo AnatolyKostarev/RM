@@ -9,10 +9,10 @@ export const CharacterEpisodes = ({ episodes }) => {
       <h6 className={s.title}>Episodes</h6>
       <div className={s.characterEpisodes_items}>
         {episodes?.map(episode => (
-          <Link to={`/episode/${episode.id}`}>
-            <div
-              className={s.characterEpisodes_item}
-              key={episode.id}>
+          <Link
+            to={`/episode/${episode.id}`}
+            key={episode.id}>
+            <div className={s.characterEpisodes_item}>
               <div>
                 <p className={s.episode}>{episode.episode}</p>
                 <p className={s.name}>{episode.name}</p>
